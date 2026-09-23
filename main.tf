@@ -9,12 +9,12 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 # Create an S3 bucket
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "jeff-devops-book-bucket-1"
+  bucket = var.bucket_name
 
   tags = {
     Name = "My DevOps Book Bucket"
